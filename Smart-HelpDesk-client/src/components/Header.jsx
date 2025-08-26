@@ -2,7 +2,7 @@ import React, { useContext } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../context/AuthContext';
 import { toast } from 'react-toastify';
-import './Header.css'; // Import the new CSS file
+import './Header.css'; 
 
 const Header = () => {
   const { user, logout } = useContext(AuthContext);

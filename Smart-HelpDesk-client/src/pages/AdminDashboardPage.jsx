@@ -10,7 +10,7 @@ const AdminDashboardPage = () => {
         <Link to="/kb/create" className="btn btn-primary me-2">
           Create New KB Article
         </Link>
-        {/* You can add more admin links here, e.g., to manage tickets or configurations */}
+        
         <p className="mt-3">
           <small className="text-muted">
             More features (like managing users or configurations) can be added here.

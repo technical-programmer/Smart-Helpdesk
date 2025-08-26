@@ -13,8 +13,9 @@ const TicketCreatePage = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     setIsLoading(true);
+    console.log(`${import.meta.env.VITE_API_URL}/tickets`);
     try {
-      await axios.post('http://localhost:5000/api/tickets', {
+      await axios.post(`${import.meta.env.VITE_API_URL}/tickets`, {
         title,
         description,
       });

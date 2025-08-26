@@ -13,7 +13,7 @@ const KBCreatePage = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      await axios.post('http://localhost:5000/api/kb', {
+      await axios.post(`${process.env.REACT_APP_API_URL}/kb`, {
         title,
         body,
         tags: tags.split(',').map(tag => tag.trim()),

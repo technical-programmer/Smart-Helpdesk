@@ -11,7 +11,11 @@ const PORT = process.env.PORT || 5000;
 const MONGO_URI = process.env.MONGO_URI;
 
 // Middleware
-app.use(cors());
+const corsOptions = {
+    origin: 'https://smart-helpdesk-8u8z.vercel.app', // Replace with your Vercel URL
+    credentials: true,
+};
+app.use(cors(corsOptions));
 app.use(express.json());
 
 // Routes

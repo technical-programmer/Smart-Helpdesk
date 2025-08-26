@@ -15,7 +15,7 @@ const TicketListPage = () => {
     if (isAuthenticated) {
       const fetchTickets = async () => {
         try {
-          const res = await axios.get('http://localhost:5000/api/tickets');
+          const res = await axios.get(`${import.meta.env.VITE_API_URL}/tickets`);
           setTickets(res.data);
           setIsLoading(false);
         } catch (error) {
