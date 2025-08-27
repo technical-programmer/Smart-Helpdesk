@@ -21,7 +21,7 @@ export const AuthProvider = ({ children }) => {
 
   const checkAuth = async () => {
     try {
-      const res = await axios.get('http://localhost:5000/api/auth/me'); // Create this endpoint on the backend
+      const res = await axios.get(`${import.meta.env.VITE_API_URL}/auth/me`); // Create this endpoint on the backend
       setUser(res.data);
       setIsAuthenticated(true);
     } catch (err) {
@@ -34,7 +34,7 @@ export const AuthProvider = ({ children }) => {
   };
 
   const login = async (email, password) => {
-    const res = await axios.post('http://localhost:5000/api/auth/login', { email, password });
+    const res = await axios.post(`${import.meta.env.VITE_API_URL}/auth/login`, { email, password });
     localStorage.setItem('token', res.data.token);
     axios.defaults.headers.common['x-auth-token'] = res.data.token;
     await checkAuth();
@@ -42,7 +42,7 @@ export const AuthProvider = ({ children }) => {
   };
 
   const register = async (name, email, password) => {
-    const res = await axios.post('http://localhost:5000/api/auth/register', { name, email, password });
+    const res = await axios.post(`${import.meta.env.VITE_API_URL}/auth/register`, { name, email, password });
     localStorage.setItem('token', res.data.token);
     axios.defaults.headers.common['x-auth-token'] = res.data.token;
     await checkAuth();

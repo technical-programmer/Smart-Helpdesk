@@ -13,7 +13,8 @@ const MONGO_URI = process.env.MONGO_URI;
 // Middleware
 const corsOptions = {
     origin: [
-        'https://smart-helpdesk-8u8z.vercel.app', 
+        'http://localhost:5173',
+        'https://smart-helpdesk-8u8z.vercel.app',
         'https://*.vercel.app'
     ],
     credentials: true,
